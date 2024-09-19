@@ -1,6 +1,6 @@
 function solve(input) {
     let str = input.toUpperCase();
-    regex = /\b[A-Z]+\b/g;
+    regex = /\b[A-Z0-9]+\b/g;
     let toPrint = str.match(regex);
     
     console.log(toPrint.join(', '));
