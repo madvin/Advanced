@@ -1,17 +1,19 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/04. JS-Advanced-DOM-Introduction-Exercise-Resources-New/04. Search in List/search.js"
-        }
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${workspaceFolder}/app.js",  // Update to your entry point
+        "console": "internalConsole",  // Use "integratedTerminal" if preferred
+        "internalConsoleOptions": "openOnSessionStart",
+        "outputCapture": "std",  // Captures the output including console logs
+        "skipFiles": ["<node_internals>/**"],  // Skip Node.js internal files
+        "smartStep": true,  // Only step into code that's yours
+        "showAsyncStacks": true,  // To show the full async call stack
+        "trace": true  // Enable tracing for detailed logs
+      }
     ]
-}
+  }
+  
