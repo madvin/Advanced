@@ -1,19 +1,43 @@
 function search() {
    
-   const input = document.querySelector('#searchText').value.toLowerCase();
 
    const townsEl = document.querySelector('#towns');
-
+   const searchFieldEl = document.querySelector('#searchText');
    const resultEl = document.querySelector('#result');
 
-   const townsArr = Array.from(input);
+   const input = searchFieldEl.value.toLowerCase();
+
+   if (input == '') return;
+
+   const townsArr = Array.from(townsEl.children);
+   const towns = townsArr.map((el) => el.textContent.toLowerCase());
+
+   townsArr.forEach((el => {
+      el.style.fontWeight = 'normal';
+      el.style.textDecoration = 'none'; 
+   }));
+
+
+   let resultArr = [];
+
+  
+for (let i = 0; i < towns.length; i++) {
+   if (towns[i].indexOf(input) >= 0) {
+      resultArr.push(i)
+   }
       
+}
 
-   let numberOfMatches = 0;
+   resultArr.forEach((position, index) => {
+      townsEl.children[position].style.fontWeight = 'bold';
+      townsEl.children[position].style.textDecoration = 'underline'; 
+   });
 
-   if (input.match)
+   resultEl.innerText = `${resultArr.length} matches found`
+
+   searchFieldEl.value = '';
 
 
-   console.log(array.innerHTML);
+   console.log(resultArr);
    
 }
