@@ -15,7 +15,7 @@ function solve() {
   for (let i = 0; i < numberOfParagraphs; i++) {
     const p = i * numberOfParagraphs;
     const text = sentences.slice(p, (p + sentencesPerParagraph)).join('. ');
-    output += `<p>${text}<p>`;
+    output += `<p>${text}</p>`;
   }
 
   outputEl.innerHTML = output;
